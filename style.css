@@ -1,0 +1,139 @@
+/*1-@import url(colocas tipografia);*/
+
+/*2-En CSS, el asterisco (*) se utiliza como un selector universal. Veamos por qué se coloca en primer lugar y cómo afecta a los estilos: */
+*{
+  box-sizing: border-box; 
+  margin: 0;
+  padding: 0;
+  font-family: "Questrial", sans-serif; 
+  font-size: 16px; /*Tamaño de letra por defecto*/
+
+}
+
+body{
+	background-color: #192028;
+	margin: 0;
+}
+
+/*¿Qué hace la propiedad box-sizing?
+La propiedad box-sizing indica cómo se deben calcular las medidas de un elemento.
+Por defecto, CSS considera que el ancho y alto de la caja son las propiedades width y height.
+Esto significa que si añades un padding o un border, el tamaño de renderizado de la caja será: width + padding + border.*/
+
+
+/*fondo que tambien puede ser header dependiendo donde creaste el navbar*/
+
+.navbar{
+	background-image: linear-gradient(to right, #192028 0%, #192028 100%);
+	position: fixed;
+	min-width: 100%;
+	z-index: 100; /* Valor alto para estar por encima de otros elementos */
+	/*box-shadow:0px 4px 8px 0px hsla(260, 100%, 66%, 0.219);*/
+	justify-content: center;
+	align-items: center;
+	height: 90px;
+	padding: 5px 5%;
+}
+
+/*4 - logo*/
+.navbar .container-fluid .navbar-brand{
+	font-weight: bolder;
+  font-size: 22px;    
+	color: #8C52FF;
+	cursor: pointer; /*para que aparezca el dedito*/
+	
+}
+
+.nav-link:hover{
+	color: #8C52FF; /*al colocar el mouse sobre las etiquetas cambia de color*/
+}
+
+@media (min-width: 360px) and (max-width: 568px){
+  .nav-link {/*centrar etiquetas del navbar*/
+    display: flex;  
+		flex-direction: column;
+		align-items: center;
+	}
+}
+
+
+  /* Cambia el color del borde del botón */
+.navbar-toggler{
+
+  color: #8C52FF;
+	     
+ }
+
+ /*--Heroe--*/
+ /*HEROE*/
+  
+.contenedor{ /*clase solo se le coloca punto y las etiquetas no ya que son nativas*/
+	display: flex;
+	max-width: 100%;
+	height: 95vh; /*80% de la pantalla cubrira la img*/
+	background-image: url(https://i.postimg.cc/MG9cKQYQ/Frame-529-2.png);
+	background-repeat: no-repeat;
+	background-size: cover; /*para que cubra toda la pantalla*/
+	background-position: center;
+}
+.contenedor .wrap{/*clases*/
+	max-width: 100%;
+	margin: 0 auto;
+	height: 100%;
+	display: flex; /*l.104/105 juntos para que al llegar a pantallas pequ escalen y se organicen*/
+	flex-wrap: row wrap;
+	justify-content: center;/*justificas a la derecha, izquierda etc*/
+}
+.contenedor .wrap .box{/*clases*/
+	font-size: 80%; /*Midel el tamaño de la caja del texto*/ 
+	flex-basis: 80%;
+	color: #F8F5FF;
+	text-align: center; /*centrado, izquierda etc..*/
+	align-self: center;
+}
+
+.contenedor .wrap .box h1{ /*clase solo se le coloca punto y las etiquetas no ya que son nativas*/
+	 font-size: 25px; /*Tamaño de letra*/
+	 line-height: .9; /*Medidas entre lineas se mide en 1*/
+	 padding-bottom: 10px; /*se separe de lo que tiene abajo*/
+	 
+}
+
+.contenedor .wrap .box p{ /*clase solo se le coloca punto y las etiquetas no ya que son nativas*/
+	 font-size: 15px; /*Tamaño de letra*/
+	 line-height: 1.2; /*Medidas entre lineas se mide en 1*/ 
+	 letter-spacing:1px; /*para separar las letras*/  
+}
+
+.button{ /*clase solo se le coloca punto y las etiquetas no ya que son nativas*/
+    position: relative;
+    display: inline-block;
+    margin-top: 5px;
+    padding: 10px 30px; /*ancho/largo*/
+    text-align: center;
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #8C52FF;
+    background: transparent;
+    cursor: pointer;
+    transition: ease-out 0.5s;
+    border: 2px solid #8C52FF;
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 0 #8C52FF;
+    font-family: 'Poppins', sans-serif;
+  }
+      
+		 
+ .button:hover {
+	 color: #F8F5FF;
+	 box-shadow: inset 0 -100px 0 0 #8C52FF;
+ }
+ 
+ .button:active {
+	 transform: scale(0.9);
+} 
+
+::-webkit-scrollbar { /*Ocultar todas las barras de desplazamiento*/
+	display: none;
+}
